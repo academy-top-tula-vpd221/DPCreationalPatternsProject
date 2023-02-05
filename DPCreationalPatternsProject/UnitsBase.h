@@ -11,30 +11,59 @@ enum UnitType
 class InfantryUnit : public Unit
 {
 public:
-	InfantryUnit() : Unit("Infantry")
+	InfantryUnit(string name = "Infantry", int attack = 5, int defense = 10) : Unit(name)
 	{
-		attack = 5;
-		defense = 10;
+		this->attack = attack;
+		this->defense = defense;
+	}
+	Unit* Clone()
+	{
+		return new InfantryUnit(*this);
 	}
 };
 
 class ArcherUnit : public Unit
 {
 public:
-	ArcherUnit() : Unit("Archer")
+	ArcherUnit(string name = "Archer", int attack = 10, int defense = 10) : Unit(name)
 	{
-		attack = 10;
-		defense = 5;
+		this->attack = attack;
+		this->defense = defense;
+	}
+	Unit* Clone()
+	{
+		return new ArcherUnit(*this);
 	}
 };
 
 class CavalryUnit : public Unit
 {
 public:
-	CavalryUnit() : Unit("Cavalry")
+	CavalryUnit(string name = "Cavalry", int attack = 15, int defense = 15) : Unit(name)
 	{
-		attack = 15;
-		defense = 10;
+		this->attack = attack;
+		this->defense = defense;
+	}
+	Unit* Clone()
+	{
+		return new CavalryUnit(*this);
 	}
 };
+
+class UniqueUnit : public Unit
+{
+public:
+	UniqueUnit(std::string name, int attack, int defense) 
+		: Unit(name)
+	{
+		this->attack = attack;
+		this->defense = defense;
+	}
+	Unit* Clone()
+	{
+		return new UniqueUnit(*this);
+	}
+};
+
+
 

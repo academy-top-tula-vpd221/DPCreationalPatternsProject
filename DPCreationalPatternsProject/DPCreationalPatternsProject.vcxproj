@@ -128,9 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DPCreationalPatternsProject.cpp" />
+    <ClCompile Include="FactoryMethod.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractFactory.h" />
+    <ClInclude Include="AddUnit.h" />
+    <ClInclude Include="Builder.h" />
     <ClInclude Include="FactoryBase.h" />
+    <ClInclude Include="FactoryMethod.h" />
+    <ClInclude Include="IClonable.h" />
+    <ClInclude Include="NationalUnit.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="UnitsBase.h" />
   </ItemGroup>

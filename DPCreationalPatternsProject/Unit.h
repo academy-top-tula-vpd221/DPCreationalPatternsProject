@@ -1,6 +1,18 @@
 #pragma once
 #include <string>
-class Unit
+
+using namespace std;
+
+class Unit;
+
+class IUnitClonable
+{
+public:
+	virtual Unit* Clone() = 0;
+};
+
+
+class Unit : public IUnitClonable
 {
 protected:
 	std::string name;
@@ -10,6 +22,11 @@ public:
 	Unit(std::string name = "") 
 		: name{ name }, attack{}, defense{} {};
 	
-	std::string ToString() { return name; }
+	virtual std::string ToString() 
+	{ 
+		return "Name: " + name
+			+ " [attack: " + to_string(attack) + "]"
+			+ " [defese: " + to_string(defense) + "]";
+	}
 };
 
